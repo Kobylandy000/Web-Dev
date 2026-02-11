@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+    <head>
+
+    </head>
+
+    <body>
+        <script>
+            let user = {
+            name: "John",
+            age: 30,
+
+            sayHi() {
+                // "this" is the "current object"
+                alert(this.name);
+            }
+
+            };
+
+            user.sayHi(); // John
+        </script>
+
+        <script>
+            let user1 = {
+            name: "John",
+            age: 30,
+
+            sayHi() {
+                alert(user1.name); // "user1" instead of "this"
+            }
+
+            };
+        </script>
+
+        <script>
+            function makeUser() {
+                return {
+                    name: "John",
+                    ref: this
+                };
+                }
+
+                let user3 = makeUser();
+
+                alert( user3.ref.name ); // Error: Cannot read property 'name' of undefined
+        </script>
+
+        <script>
+            let calculator = {
+                sum() {
+                    return this.a + this.b;
+                },
+
+                mul() {
+                    return this.a * this.b;
+                },
+
+                read() {
+                    this.a = +prompt('a?', 0);
+                    this.b = +prompt('b?', 0);
+                }
+                };
+
+                calculator.read();
+                alert( calculator.sum() );
+                alert( calculator.mul() );
+        </script>
+
+        <script>
+            let ladder = {
+                step: 0,
+                up() {
+                    this.step++;
+                    return this;
+                },
+                down() {
+                    this.step--;
+                    return this;
+                },
+                showStep() {
+                    alert( this.step );
+                    return this;
+                }
+                };
+
+                ladder.up().up().down().showStep().down().showStep(); // shows 1 then 0
+        </script>
+    </body>
+</html>

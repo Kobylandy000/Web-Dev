@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        
+        <script>
+            // document.querySelector('.elem') is null if there's no element
+            let html = document.querySelector('.elem').innerHTML; // error if it's null
+        </script>
+
+        <script>
+            let htm = document.querySelector('.elem') ? document.querySelector('.elem').innerHTML : null;
+        </script>
+
+        <script>
+            let user = {}; // user has no address
+
+            alert( user.address && user.address.street && user.address.street.name ); // undefined (no error)
+        </script>
+
+        <script>
+            let user1 = {}; // user has no address
+
+            alert( user1?.address?.street ); // undefined (no error)
+        </script>
+
+        <script>
+            let user2 = null;
+
+            alert( user2?.address ); // undefined
+            alert( user2?.address.street ); // undefined
+        </script>
+
+        <script>
+            let user3 = null;
+            let x = 0;
+
+            user3?.sayHi(x++); // no "user", so the execution doesn't reach sayHi call and x++
+
+            alert(x); // 0, value not incremented
+        </script>
+
+        <script>
+            let userAdmin = {
+            admin() {
+                alert("I am admin");
+            }
+            };
+
+            let userGuest = {};
+
+            userAdmin.admin?.(); // I am admin
+
+            userGuest.admin?.(); // nothing happens (no such method)
+        </script>
+
+        <script>
+            let key = "firstName";
+
+            let user11 = {
+            firstName: "John"
+            };
+
+            let user12 = null;
+
+            alert( user11?.[key] ); // John
+            alert( user12?.[key] ); // undefined
+
+            delete user?.name; // delete user.name if user exists
+        </script>
+
+        <script>
+            let user10 = null;
+
+            user10?.name = "John"; // Error, doesn't work
+            // because it evaluates to: undefined = "John"
+        </script>
+    </body>
+</html>
