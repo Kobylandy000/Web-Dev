@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mark Zuckerberg - Facebook</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <div class="header">
+        <div class="logo">
+            <i class="fab fa-facebook-square"></i>
+            <span>Facebook</span>
+        </div>
+        <input type="text" class="search-bar" placeholder="Search Facebook">
+    </div>
+    
+    <div class="container">
+        <!-- Main Content -->
+        <div class="main-content">
+            <!-- Profile Header -->
+            <div class="profile-header">
+                <div class="cover-photo"></div>
+                <div class="profile-info">
+                    <div class="profile-pic">
+                        <i class="fas fa-user"></i>
+                    </div>
+                    <div class="profile-details">
+                        <h1 class="profile-name">Mark Zuckerberg</h1>
+                        <p class="profile-bio">CEO at Facebook</p>
+                        <div class="profile-stats">
+                            <span><i class="fas fa-user-friends"></i> 3 Mutual Friends</span>
+                            <span><i class="fas fa-map-marker-alt"></i> Lives in Palo Alto, California</span>
+                            <span><i class="fas fa-home"></i> From Dobbs Ferry, New York</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Education and Work -->
+            <div class="section">
+                <h2 class="section-title">Education and Work</h2>
+                <ul class="info-list">
+                    <li>
+                        <i class="fas fa-briefcase"></i>
+                        <div>
+                            <strong>Employers:</strong>
+                            <ul class="nested-list">
+                                <li><strong>Facebook</strong> - Feb 2004 to present · Palo Alto, California</li>
+                                <li>FBX Profile</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-university"></i>
+                        <div>
+                            <strong>College:</strong>
+                            <ul class="nested-list">
+                                <li><strong>Harvard University</strong></li>
+                                <li>Computer Science · Psychology</li>
+                                <li>CS182. Intelligent Machines with Andrew Bosworth</li>
+                                <li>CS121. Introduction to Computational Theory with James Wang and Kang-Xing Jin</li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fas fa-graduation-cap"></i>
+                        <div>
+                            <strong>High School:</strong>
+                            <ul class="nested-list">
+                                <li>Ardsley High School</li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <!-- Philosophy -->
+            <div class="section">
+                <h2 class="section-title">Philosophy</h2>
+                <p class="philosophy">"All children are artists. The problem is how to remain an artist once he grows up."</p>
+            </div>
+            
+            <!-- Personal Info -->
+            <div class="section">
+                <h2 class="section-title">Personal Information</h2>
+                <ul class="info-list">
+                    <li>
+                        <i class="fas fa-birthday-cake"></i>
+                        <div><strong>Born:</strong> May 14, 1984</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-map-marker-alt"></i>
+                        <div><strong>Lives in:</strong> Palo Alto, California</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-home"></i>
+                        <div><strong>From:</strong> Dobbs Ferry, New York</div>
+                    </li>
+                    <li>
+                        <i class="fas fa-user-graduate"></i>
+                        <div><strong>Studied:</strong> Computer Science at Harvard University</div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Sidebar -->
+        <div class="sidebar">
+            <!-- Mutual Friends -->
+            <div class="mutual-friends">
+                <h3 class="mutual-title">You and Mark</h3>
+                <div class="mutual-count">
+                    <i class="fas fa-user-friends"></i>
+                    <div>
+                        <strong>3 Mutual Friends</strong>
+                    </div>
+                </div>
+                <div class="friend-icons">
+                    <div class="friend-icon"><i class="fas fa-user"></i></div>
+                    <div class="friend-icon"><i class="fas fa-user"></i></div>
+                    <div class="friend-icon"><i class="fas fa-user"></i></div>
+                </div>
+            </div>
+            
+            <!-- Sponsored Content -->
+            <div class="sponsored-item">
+                <span class="ad-badge">Sponsored</span>
+                <h4 class="sponsored-title">Police Auctions</h4>
+                <a href="#" class="sponsored-link">gsaauctions.gov</a>
+                <p class="sponsored-desc">Like a slick deal? Now you can get up to 90% retail with police seized auctions. Get in on the action.</p>
+            </div>
+            
+            <div class="sponsored-item">
+                <span class="ad-badge">Sponsored</span>
+                <h4 class="sponsored-title">SF Bucket List</h4>
+                <a href="#" class="sponsored-link">partners.livingsocial.com</a>
+                <p class="sponsored-desc">Things to do in San Francisco before you die. One huge coupon emailed daily.</p>
+            </div>
+            
+            <div class="sponsored-item">
+                <span class="ad-badge">Sponsored</span>
+                <h4 class="sponsored-title">Stay close to your team</h4>
+                <p class="sponsored-desc">Check the score and see highlights from the big game with AT&T High Speed Internet for only $14.95/mo.</p>
+            </div>
+            
+            <div class="sponsored-item">
+                <span class="ad-badge">Sponsored</span>
+                <h4 class="sponsored-title">Craft Beer Attorney</h4>
+                <p class="sponsored-desc">Need legal assistance with your California craft beer!</p>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <div class="footer">
+        <p>Facebook © 2023 · Privacy · Terms · Advertising · Cookies</p>
+    </div>
+    
+    <script>
+        // Add some interactivity to the friend icons
+        document.querySelectorAll('.friend-icon').forEach(icon => {
+            icon.addEventListener('mouseenter', function() {
+                this.style.transform = 'scale(1.1)';
+                this.style.transition = 'transform 0.2s';
+            });
+            
+            icon.addEventListener('mouseleave', function() {
+                this.style.transform = 'scale(1)';
+            });
+        });
+        
+        // Make sponsored links open in new tab
+        document.querySelectorAll('.sponsored-link').forEach(link => {
+            link.setAttribute('target', '_blank');
+        });
+    </script>
+</body>
+</html>

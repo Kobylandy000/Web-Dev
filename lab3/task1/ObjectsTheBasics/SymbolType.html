@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+    <script>
+        let id1 = Symbol("id");
+        let id2 = Symbol("id");
+
+        alert(id1 == id2); // false
+
+        let id = Symbol("id");
+        alert(id.toString); // TypeError: Cannot convert a Symbol value to a string
+        alert(id.description); // id
+
+
+        let user = { // belongs to another code
+            name: "John"
+            };
+
+            let idd = Symbol("id");
+
+            user[idd] = 1;
+
+            alert( user[idd] ); // we can access the data using the symbol as the key
+
+        
+        let id4 = Symbol("id");
+        let user4 = {
+        name: "John",
+        age: 30,
+        [id4]: 123
+        };
+
+        for (let key in user4) alert(key); // name, age (no symbols)
+
+        // the direct access by the symbol works
+        alert( "Direct: " + user[id4] ); // Direct: 123
+
+
+        let id5 = Symbol("id");
+        let user5 = {
+        [id5]: 123
+        };
+
+        let clone = Object.assign({}, user5);
+
+        alert( clone[id5] ); // 123
+
+
+        // get symbol by name
+        let sym = Symbol.for("name");
+        let sym2 = Symbol.for("id");
+
+        // get name by symbol
+        alert( Symbol.keyFor(sym) ); // name
+        alert( Symbol.keyFor(sym2) ); // id
+
+        let globalSymbol = Symbol.for("name");
+        let localSymbol = Symbol("name");
+
+        alert( Symbol.keyFor(globalSymbol) ); // name, global symbol
+        alert( Symbol.keyFor(localSymbol) ); // undefined, not global
+
+        alert( localSymbol.description ); // name
+
+        
+    </script>
+
+    </body>
+</html>

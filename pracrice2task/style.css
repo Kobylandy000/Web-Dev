@@ -1,0 +1,315 @@
+/* Body styles (background color, font family) */
+body {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    line-height: 1.6;
+    color: #2d3436;
+}
+
+/* Text colors/sizes for headings */
+h1 {
+    color: white;
+    font-size: 2.8em;
+    text-align: center;
+    margin-bottom: 20px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+    border-bottom: 3px solid #ffd700;
+    padding-bottom: 15px;
+    letter-spacing: 2px;
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 1.8em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+    border-left: 5px solid #667eea;
+    padding-left: 15px;
+    background: linear-gradient(to right, rgba(102,126,234,0.1), transparent);
+    padding: 10px 0 10px 15px;
+    border-radius: 0 10px 10px 0;
+}
+
+/* ID selector example */
+#skills-list {
+    background-color: white;
+    padding: 25px 25px 25px 45px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    border: 1px solid rgba(102,126,234,0.2);
+}
+
+#skills-list li {
+    margin-bottom: 12px;
+    color: #2d3436;
+    font-weight: 500;
+    padding: 5px 0;
+    border-bottom: 1px dashed #e0e0e0;
+}
+
+#skills-list li:last-child {
+    border-bottom: none;
+}
+
+/* Element selectors */
+img {
+    border-radius: 50%;
+    border: 5px solid white;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    display: block;
+    margin: 20px auto;
+    transition: all 0.3s ease;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+img:hover {
+    transform: scale(1.05) rotate(5deg);
+    border-color: #ffd700;
+}
+
+p {
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    text-align: justify;
+    font-size: 1.1em;
+    border-left: 5px solid #667eea;
+}
+
+/* Link styles (hover effect) */
+.favorite-link {
+    color: #667eea;
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 12px;
+    border-radius: 25px;
+    transition: all 0.3s ease;
+    background: linear-gradient(to right, rgba(102,126,234,0.1), transparent);
+    display: inline-block;
+}
+
+.favorite-link:hover {
+    color: white;
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    text-decoration: none;
+    padding: 5px 20px;
+    box-shadow: 0 5px 15px rgba(102,126,234,0.4);
+    transform: translateY(-2px);
+}
+
+/* List styles (special bullets or indents) */
+.hobbies-list {
+    list-style-type: none;
+    padding: 25px 25px 25px 40px;
+    background-color: white;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border: 1px solid rgba(102,126,234,0.2);
+}
+
+.hobbies-list li {
+    margin-bottom: 15px;
+    padding-left: 35px;
+    position: relative;
+    font-size: 1.05em;
+    transition: all 0.3s ease;
+}
+
+.hobbies-list li:hover {
+    transform: translateX(10px);
+    color: #667eea;
+}
+
+.hobbies-list li::before {
+    content: "⚡";
+    position: absolute;
+    left: 0;
+    color: #ffd700;
+    font-size: 1.3em;
+    text-shadow: 0 0 5px rgba(255,215,0,0.3);
+}
+
+/* Table styles (borders, row striping) */
+#schedule-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 25px 0;
+    font-size: 0.95em;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    border-radius: 15px;
+    overflow: hidden;
+}
+
+#schedule-table th {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    color: white;
+    padding: 18px 15px;
+    text-align: left;
+    font-weight: 600;
+    font-size: 1.1em;
+    letter-spacing: 1px;
+}
+
+#schedule-table td {
+    padding: 15px;
+    border-bottom: 1px solid #ecf0f1;
+    background-color: white;
+}
+
+/* Row striping */
+#schedule-table tr:nth-child(even) td {
+    background-color: #f8faff;
+}
+
+#schedule-table tr:hover td {
+    background: linear-gradient(to right, rgba(102,126,234,0.1), white);
+    transition: background-color 0.3s ease;
+}
+
+/* Contact form styles */
+#contact-form {
+    background-color: white;
+    padding: 35px;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+    border: 1px solid rgba(102,126,234,0.2);
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-weight: 600;
+    font-size: 1.05em;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 14px;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: inherit;
+    font-size: 1em;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+    background: #f8faff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #667eea;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(102,126,234,0.1);
+    transform: translateY(-2px);
+}
+
+.form-group textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* Button styles (inline style бар, бірақ қосымша стильдер) */
+button {
+    font-family: inherit;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102,126,234,0.5) !important;
+}
+
+/* Footer style */
+footer p {
+    background: transparent;
+    box-shadow: none;
+    border-left: none;
+    font-size: 0.95em;
+    text-align: center;
+    color: rgba(255,255,255,0.8);
+}
+
+/* Responsive design (media queries) */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+    
+    h1 {
+        font-size: 2em;
+    }
+    
+    h2 {
+        font-size: 1.5em;
+    }
+    
+    img {
+        width: 150px;
+        height: 150px;
+    }
+    
+    #contact-form {
+        padding: 25px;
+    }
+    
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+    }
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+body > * {
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* Selection style */
+::selection {
+    background: #667eea;
+    color: white;
+}
+
+/* Scrollbar style */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(45deg, #667eea, #764ba2);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(45deg, #764ba2, #667eea);
+}
