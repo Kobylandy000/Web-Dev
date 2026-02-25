@@ -1,0 +1,9 @@
+<div class="container">
+  <h1>Біздің өнімдер ({{ products.length }})</h1>
+  
+  <div class="products-grid">
+    <app-product-card *ngFor="let product of products; trackBy: trackById" 
+                      [product]="product">
+    </app-product-card>
+  </div>
+</div>
