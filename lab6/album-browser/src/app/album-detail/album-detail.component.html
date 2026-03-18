@@ -1,0 +1,88 @@
+<div class="detail-container">
+  <!-- 1. Loading индикатор -->
+  <div *ngIf="loading" class="loading">
+    <div class="spinner"></div>
+    <p>Loading album details...</p>
+  </div>
+
+  <!-- 2. Альбом детальдары -->
+  <div *ngIf="!loading && album" class="detail-content">
+    <!-- Артқа батырмасы -->
+    <div class="navigation">
+      <a routerLink="/albums" class="back-btn">← Back to Albums</a>
+    </div>
+
+    <!-- Альбом ақпараты -->
+    <div class="album-info">
+      <div class="header">
+        <h1>Album #{{ album.id }}</h1>
+        
+        <!-- Жұлдызша батырмасы -->
+        <button
+          class="star-btn"
+          [attr.aria-pressed]="isFavorite()"
+          [attr.aria-label]="isFavorite() ? 'Remove from favorites' : 'Add to favorites'"
+          (click)="toggleFavorite()"
+        >
+          {{ isFavorite() ? '★' : '☆' }}
+        </button>
+      </div>
+
+      <!-- Альбом деректері -->
+      <div class="info-grid">
+        <div class="info-item">
+          <label>User ID:</label>
+          <span>{{ album.userId }}</span>
+        </div>
+        <div class="info-item">
+          <label>Album ID:</label>
+          <span>{{ album.id }}</span>
+        </div>
+        <div class="info-item full-width">
+          <label>Title:</label>
+          <span>{{ album.title }}</span>
+        </div>
+      </div>
+
+      <!-- Атауын өзгерту формасы -->
+      <div class="edit-section">
+        <h2>Edit Title</h2>
+        <div class="edit-form">
+          <input
+            type="text"
+            [(ngModel)]="editedTitle"
+            placeholder="Enter new title"
+            class="title-input"
+            [disabled]="saving"
+          />
+          
+          <button
+            (click)="saveTitle()"
+            class="save-btn"
+            [disabled]="saving || editedTitle === album.title"
+          >
+            <span *ngIf="!saving">💾 Save Changes</span>
+            <span *ngIf="saving">Saving...</span>
+          </button>
+        </div>
+        <p *ngIf="editedTitle === album.title && !saving" class="hint">
+          No changes detected
+        </p>
+      </div>
+
+      <!-- Фотосуреттерге сілтеме -->
+      <div class="photos-link">
+        <a [routerLink]="['/albums', album.id, 'photos']" class="photos-btn">
+          📸 View Photos
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- 3. Альбом табылмаса -->
+  <div *ngIf="!loading && !album" class="not-found">
+    <h2>Album not found</h2>
+    <p>The album you're looking for doesn't exist.</p>
+    <a routerLink="/albums" class="back-btn">← Back to Albums</a>
+  </div>
+</div>

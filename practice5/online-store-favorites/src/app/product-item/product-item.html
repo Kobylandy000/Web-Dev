@@ -1,0 +1,26 @@
+<div class="product-card" [class.favorite-card]="product.isFavorite">
+  <div class="product-badge" *ngIf="product.isFavorite">⭐ Favorite</div>
+  
+  <!-- СУРЕТ ҮШІН -->
+  <div class="product-image">
+    <img 
+      [src]="product.imageUrl" 
+      [alt]="product.name"
+      class="product-img"
+      onerror="this.src='assets/images/default.jpg'">
+  </div>
+  
+  <div class="product-info">
+    <h3>{{ product.name }}</h3>
+    <p class="category">{{ product.category }}</p>
+    <p class="price">{{ product.price }} ₸</p>
+  </div>
+  
+  <button 
+    class="favorite-btn"
+    [class.active]="product.isFavorite"
+    (click)="onToggleFavorite()">
+    <span class="star">{{ product.isFavorite ? '★' : '☆' }}</span>
+    {{ product.isFavorite ? 'In Favorites' : 'Add to Favorites' }}
+  </button>
+</div>

@@ -1,0 +1,16 @@
+<div class="container">
+  <h1>{{ categoryName }} ({{ products.length }})</h1>
+  
+  <div *ngIf="products.length === 0" class="empty-message">
+    <p>Бұл категорияда өнім жоқ</p>
+  </div>
+  
+  <div class="products-grid" *ngIf="products.length > 0">
+    <app-product-card 
+      *ngFor="let product of products; trackBy: trackById" 
+      [product]="product"
+      (like)="onLike($event)"
+      (delete)="onDelete($event)">
+    </app-product-card>
+  </div>
+</div>

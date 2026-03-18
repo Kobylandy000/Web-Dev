@@ -1,0 +1,15 @@
+<div class="product-list">
+  <h2 class="section-title">{{ title }}</h2>
+  
+  <div *ngIf="products.length === 0 && showEmptyMessage" class="empty-message">
+    <p>Әзірге өнімдер жоқ</p>
+  </div>
+  
+  <div class="products-grid">
+    <app-product-item 
+      *ngFor="let product of products"
+      [product]="product"
+      (toggleFavorite)="toggleFavorite.emit($event)">
+    </app-product-item>
+  </div>
+</div>

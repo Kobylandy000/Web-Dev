@@ -1,0 +1,57 @@
+<div class="product-card" *ngIf="product">
+  <a [href]="product.link" target="_blank" class="product-link">
+    <div class="image-container">
+      <img [src]="product.images[currentImageIndex]" [alt]="product.name" class="product-image">
+      <div class="image-nav" *ngIf="product.images.length > 1">
+        <button class="nav-btn prev" (click)="prevImage(); $event.preventDefault()">❮</button>
+        <button class="nav-btn next" (click)="nextImage(); $event.preventDefault()">❯</button>
+      </div>
+      <div class="image-dots">
+        <span *ngFor="let img of product.images; let i = index" 
+              class="dot" 
+              [class.active]="i === currentImageIndex"
+              (click)="currentImageIndex = i; $event.preventDefault()">
+        </span>
+      </div>
+    </div>
+    
+    <div class="product-info">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-description">{{ product.description }}</p>
+      
+      <div class="product-rating">
+        <span *ngFor="let star of getStars(product.rating)" 
+              class="star" 
+              [class.filled]="isStarFilled(star, product.rating)">
+          ★
+        </span>
+        <span class="rating-value">{{ product.rating }}</span>
+      </div>
+      
+      <div class="product-price">
+        {{ product.price | number }} ₸
+      </div>
+
+      <div class="product-likes">
+        <span class="likes-count">❤ {{ product.likes }}</span>
+      </div>
+    </div>
+  </a>
+  
+  <div class="product-actions">
+    <button class="like-btn" (click)="onLike()">
+      ❤ Лайк
+    </button>
+    
+    <a [href]="getWhatsAppLink()" target="_blank" class="share-btn whatsapp">
+      WhatsApp
+    </a>
+    <a [href]="getTelegramLink()" target="_blank" class="share-btn telegram">
+      Telegram
+    </a>
+    
+    <button class="delete-btn" (click)="onDelete()">
+      🗑
+    </button>
+  </div>
+</div>

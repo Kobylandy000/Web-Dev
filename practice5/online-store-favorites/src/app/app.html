@@ -1,0 +1,40 @@
+<div class="app-container">
+  <header class="header">
+    <h1>🛍️ MY SHOP</h1>
+    <p class="tagline">Your favorite products in one place</p>
+  </header>
+
+  <!-- Favorites Section -->
+  <section class="favorites-section">
+    <h2>⭐ FAVORITES ({{ favorites.length }})</h2>
+    
+    <div *ngIf="favorites.length === 0" class="empty-message">
+      <p>✨ No favorite products yet</p>
+    </div>
+    
+    <div class="products-grid" *ngIf="favorites.length > 0">
+      <app-product-item
+        *ngFor="let product of favorites"
+        [product]="product"
+        (toggleFavorite)="toggleFavorite($event)">
+      </app-product-item>
+    </div>
+  </section>
+
+  <!-- All Products Section -->
+  <section class="all-products-section">
+    <h2>📋 ALL PRODUCTS</h2>
+    
+    <div class="products-grid">
+      <app-product-item
+        *ngFor="let product of products"
+        [product]="product"
+        (toggleFavorite)="toggleFavorite($event)">
+      </app-product-item>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <p>© 2024 My Shop. All rights reserved.</p>
+  </footer>
+</div>

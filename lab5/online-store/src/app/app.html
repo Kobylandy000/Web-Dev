@@ -1,0 +1,30 @@
+<main class="main">
+  <div class="categories-sidebar">
+    <h2>Категориялар</h2>
+    <div class="categories-list">
+      <button 
+        *ngFor="let category of categories" 
+        class="category-btn"
+        [class.active]="selectedCategoryId === category.id"
+        (click)="selectCategory(category.id)">
+        <span class="category-icon">{{ category.icon }}</span>
+        <span class="category-name">{{ category.name }}</span>
+      </button>
+    </div>
+  </div>
+
+  <div class="products-area">
+    <div *ngIf="selectedCategoryId === null" class="welcome-message">
+      <h2>Қош келдіңіз!</h2>
+      <p>Өнімдерді көру үшін категорияны таңдаңыз</p>
+    </div>
+
+    <app-product-list 
+      *ngIf="selectedCategoryId !== null"
+      [products]="products"
+      [categoryName]="getSelectedCategoryName()"
+      (likeProduct)="onLike($event)"
+      (deleteProduct)="onDelete($event)">
+    </app-product-list>
+  </div>
+</main>

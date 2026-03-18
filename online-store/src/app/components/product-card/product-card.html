@@ -1,0 +1,32 @@
+<div class="product-card" *ngIf="product">
+  <a [href]="product.link" target="_blank" class="product-link">
+    <img [src]="getMainImage()" [alt]="product.name" class="product-image">
+    
+    <div class="product-info">
+      <h3 class="product-name">{{ product.name }}</h3>
+      <p class="product-description">{{ product.description }}</p>
+      
+      <div class="product-rating">
+        <span *ngFor="let star of getStars(product.rating)" 
+              class="star" 
+              [class.filled]="isStarFilled(star, product.rating)">
+          ★
+        </span>
+        <span class="rating-value">{{ product.rating }}</span>
+      </div>
+      
+      <div class="product-price">
+        {{ product.price | number }} ₸
+      </div>
+    </div>
+  </a>
+  
+  <div class="product-actions">
+    <a [href]="getWhatsAppLink()" target="_blank" class="share-btn whatsapp">
+      WhatsApp
+    </a>
+    <a [href]="getTelegramLink()" target="_blank" class="share-btn telegram">
+      Telegram
+    </a>
+  </div>
+</div>

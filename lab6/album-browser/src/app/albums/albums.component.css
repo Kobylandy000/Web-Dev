@@ -1,0 +1,15 @@
+.albums-container {
+  padding: 20px;
+}
+ul {
+  list-style: none;
+  padding: 0;
+}
+li {
+  padding: 10px;
+  margin: 5px 0;
+  border: 1px solid #ddd;
+  display: flex;
+  justify-content: space-between;
+}
+
