@@ -1,0 +1,22 @@
+[
+    {
+        "type": "Animal",
+        "name": "Generic Animal",
+        "age": 5,
+        "color": "brown"
+    },
+    {
+        "type": "Dog",
+        "name": "Buddy",
+        "age": 3,
+        "color": "golden",
+        "breed": "Labrador"
+    },
+    {
+        "type": "Cat",
+        "name": "Whiskers",
+        "age": 4,
+        "color": "white",
+        "indoor": true
+    }
+]
