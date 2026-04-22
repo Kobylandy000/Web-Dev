@@ -1,0 +1,11 @@
+<h2>Subscription</h2>
+
+<div *ngIf="subscription">
+  <p><strong>Status:</strong> {{ subscription.is_active ? 'Active' : 'Inactive' }}</p>
+
+  <button *ngIf="!subscription.is_active" (click)="buySubscription()">
+    Buy Subscription
+  </button>
+
+  <p>{{ message }}</p>
+</div>

@@ -1,0 +1,175 @@
+:host {
+  display: block;
+}
+
+.detail-card {
+  max-width: 900px;
+  margin: 0 auto;
+  background: linear-gradient(180deg, rgba(18, 18, 32, 0.96), rgba(10, 10, 20, 0.96));
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: 22px;
+  padding: 30px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.35);
+}
+
+.detail-card h2 {
+  font-size: 48px;
+  margin-top: 0;
+  margin-bottom: 16px;
+  color: white;
+}
+
+.detail-card h3 {
+  margin-top: 28px;
+  margin-bottom: 14px;
+  color: #f5f5f7;
+  font-size: 28px;
+}
+
+.detail-card p,
+.detail-card li {
+  color: #d1d5db;
+  line-height: 1.6;
+}
+
+.detail-card strong {
+  color: white;
+}
+
+.detail-card ul {
+  padding-left: 20px;
+}
+
+.detail-card li {
+  margin-bottom: 14px;
+}
+
+.detail-card select,
+.detail-card textarea {
+  background: rgba(20, 20, 32, 0.95);
+  color: #e5e7eb;
+  border: 1px solid rgba(168, 85, 247, 0.18);
+  border-radius: 12px;
+  padding: 12px;
+}
+
+.detail-card textarea {
+  width: 100%;
+  min-height: 110px;
+  margin: 8px 0 14px;
+}
+
+.actions-row {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.top-actions {
+  margin: 24px 0 18px;
+}
+
+.inline-actions {
+  margin-left: 12px;
+  display: inline-flex;
+}
+
+.action-panel {
+  margin-top: 20px;
+  padding: 18px;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(168, 85, 247, 0.14);
+}
+
+.primary-btn,
+.secondary-btn,
+.watchlist-btn,
+.danger-btn {
+  border: none;
+  border-radius: 12px;
+  padding: 10px 18px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.primary-btn {
+  background: linear-gradient(135deg, #7c3aed, #9333ea);
+  color: #f8fafc;
+}
+
+.primary-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(147, 51, 234, 0.35);
+}
+
+.secondary-btn {
+  background: rgba(255, 255, 255, 0.06);
+  color: #e9d5ff;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+}
+
+.secondary-btn:hover {
+  background: rgba(168, 85, 247, 0.12);
+}
+
+.watchlist-btn {
+  background: linear-gradient(135deg, #4c1d95, #7e22ce);
+  color: white;
+}
+
+.watchlist-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 24px rgba(126, 34, 206, 0.3);
+}
+
+.danger-btn {
+  background: rgba(220, 38, 38, 0.14);
+  color: #fca5a5;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+.danger-btn:hover {
+  background: rgba(220, 38, 38, 0.22);
+}
+
+.watchlist-added {
+  color: #c084fc;
+  font-weight: 700;
+}
+
+.back-link {
+  display: inline-block;
+  margin-top: 24px;
+  color: #c084fc;
+  font-weight: 700;
+}
+
+.access-error {
+  max-width: 700px;
+  margin: 60px auto;
+  background: rgba(40, 14, 44, 0.9);
+  border: 1px solid rgba(192, 132, 252, 0.35);
+  border-radius: 18px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.3);
+}
+
+.player-box {
+  margin: 20px 0 28px;
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  box-shadow: 0 12px 28px rgba(0, 0, 0, 0.35);
+}
+
+.player-box iframe {
+  width: 100%;
+  height: 460px;
+  display: block;
+  background: #000;
+}

@@ -1,0 +1,27 @@
+h2 {
+  color: white;
+  font-size: 34px;
+  margin-bottom: 20px;
+}
+
+.movie-card {
+  background: linear-gradient(180deg, rgba(28, 28, 43, 0.95), rgba(18, 18, 28, 0.95));
+  border: 1px solid rgba(168, 85, 247, 0.15);
+  border-radius: 18px;
+  padding: 20px;
+  margin-bottom: 18px;
+  box-shadow: 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.movie-card h3 {
+  color: white;
+  margin-top: 0;
+}
+
+.movie-card p {
+  color: #d1d5db;
+}
+
+.movie-card button {
+  margin-left: 10px;
+}

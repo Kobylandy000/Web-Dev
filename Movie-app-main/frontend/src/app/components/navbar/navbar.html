@@ -1,0 +1,14 @@
+<nav class="navbar">
+  <a routerLink="/" class="logo">Movie App</a>
+
+  <div class="links">
+    <a routerLink="/">Home</a>
+    <a routerLink="/watchlist">Watchlist</a>
+    <a routerLink="/subscription">Subscription</a>
+
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/login">Login</a>
+    <a *ngIf="!authService.isLoggedIn()" routerLink="/register">Register</a>
+
+    <button *ngIf="authService.isLoggedIn()" (click)="logout()">Logout</button>
+  </div>
+</nav>

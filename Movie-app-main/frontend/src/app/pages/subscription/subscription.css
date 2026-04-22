@@ -1,0 +1,21 @@
+h2 {
+  color: white;
+  font-size: 34px;
+  margin-bottom: 18px;
+}
+
+:host {
+  display: block;
+  max-width: 600px;
+  margin: 40px auto;
+  padding: 28px;
+  background: linear-gradient(180deg, rgba(25, 25, 38, 0.98), rgba(15, 15, 25, 0.98));
+  border: 1px solid rgba(168, 85, 247, 0.2);
+  border-radius: 20px;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.3);
+}
+
+p {
+  color: #e5e7eb;
+  font-size: 18px;
+}

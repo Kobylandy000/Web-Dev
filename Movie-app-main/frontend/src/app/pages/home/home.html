@@ -1,0 +1,35 @@
+
+<h2>Discover Movies</h2>
+
+<div class="search-bar">
+  <input
+    type="text"
+    [(ngModel)]="searchText"
+    placeholder="Search by title or description..."
+  />
+  <button class="search-btn" (click)="search()">Search</button>
+</div>
+
+<div class="genres">
+  <button (click)="showAllMovies()">All</button>
+  <button *ngFor="let genre of genres" (click)="filterByGenre(genre.id)">
+    {{ genre.name }}
+  </button>
+</div>
+
+<div class="movie-grid">
+  <div class="movie-card" *ngFor="let movie of movies">
+    <div class="poster-wrapper">
+      <img [src]="movie.poster_url || 'https://dummyimage.com/500x750/111827/c084fc&text=No+Poster'" [alt]="movie.title">
+      <span *ngIf="movie.is_premium" class="premium-badge">PREMIUM</span>
+    </div>
+
+    <div class="movie-info">
+      <h3>{{ movie.title }}</h3>
+      <p><strong>Genre:</strong> {{ movie.genre.name }}</p>
+      <p><strong>Year:</strong> {{ movie.release_year }}</p>
+      <p>{{ movie.description }}</p>
+      <a [routerLink]="['/movies', movie.id]">View Details</a>
+    </div>
+  </div>
+</div>

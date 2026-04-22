@@ -1,0 +1,12 @@
+<h2>My Watchlist</h2>
+
+<div *ngIf="watchlist.length === 0">
+  <p>No movies in watchlist yet.</p>
+</div>
+
+<div *ngFor="let item of watchlist" class="movie-card">
+  <h3>{{ item.movie.title }}</h3>
+  <p>{{ item.movie.description }}</p>
+  <a [routerLink]="['/movies', item.movie.id]">Open Movie</a>
+  <button (click)="removeItem(item.id)">Remove</button>
+</div>

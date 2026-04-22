@@ -1,0 +1,118 @@
+<div *ngIf="accessError; else movieContent" class="access-error">
+  <p>{{ accessError }}</p>
+  <a routerLink="/subscription">Go to Subscription</a>
+</div>
+
+<ng-template #movieContent>
+  <div *ngIf="movie; else loading" class="detail-card">
+    <h2>{{ movie.title }}</h2>
+
+    <p><strong>Genre:</strong> {{ movie.genre.name }}</p>
+    <p><strong>Year:</strong> {{ movie.release_year }}</p>
+    <p>{{ movie.description }}</p>
+
+    <div class="actions-row top-actions">
+  <button class="primary-btn" *ngIf="movie?.video_url" (click)="togglePlayer()">
+    {{ showPlayer ? 'Hide Intro' : 'Play Intro' }}
+  </button>
+
+  <button class="primary-btn" (click)="toggleRatingForm()">
+    {{ showRatingForm ? 'Close Rating' : 'Rate Movie' }}
+  </button>
+
+  <button class="secondary-btn" (click)="toggleReviewForm()">
+    {{ showReviewForm ? 'Close Review' : 'Write Review' }}
+  </button>
+</div>
+
+<div *ngIf="showPlayer && safeVideoUrl" class="player-box">
+  <iframe
+    [src]="safeVideoUrl"
+    title="Movie Intro"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+
+    <p><strong>Average rating:</strong> {{ getAverageRating() | number:'1.1-1' }}</p>
+
+    <div class="actions-row top-actions">
+      <button class="primary-btn" (click)="toggleRatingForm()">
+        {{ showRatingForm ? 'Close Rating' : 'Rate Movie' }}
+      </button>
+
+      <button class="secondary-btn" (click)="toggleReviewForm()">
+        {{ showReviewForm ? 'Close Review' : 'Write Review' }}
+      </button>
+    </div>
+
+    <div *ngIf="!isInWatchlist; else addedBlock" class="actions-row">
+      <button class="watchlist-btn" (click)="addToWatchlist()">+ Add to Watchlist</button>
+    </div>
+
+    <ng-template #addedBlock>
+      <div class="actions-row">
+        <span class="watchlist-added">✔ In your watchlist</span>
+        <button class="danger-btn" (click)="removeFromWatchlist()">Remove</button>
+      </div>
+    </ng-template>
+
+    <div *ngIf="showRatingForm" class="action-panel">
+      <h3>Rate this movie</h3>
+      <div class="actions-row">
+        <select [(ngModel)]="selectedScore">
+          <option [value]="1">1</option>
+          <option [value]="2">2</option>
+          <option [value]="3">3</option>
+          <option [value]="4">4</option>
+          <option [value]="5">5</option>
+        </select>
+        <button class="primary-btn" (click)="submitRating()">Submit Rating</button>
+      </div>
+      <p>{{ message }}</p>
+    </div>
+
+    <h3>All Ratings</h3>
+    <ul>
+      <li *ngFor="let rating of ratings">
+        {{ rating.username }}: {{ rating.score }}/5
+      </li>
+    </ul>
+
+    <div *ngIf="showReviewForm" class="action-panel">
+      <h3>Write a Review</h3>
+      <textarea [(ngModel)]="newReview" placeholder="Share your thoughts about this movie..."></textarea>
+      <div class="actions-row">
+        <button class="primary-btn" (click)="submitReview()">Submit Review</button>
+      </div>
+    </div>
+
+    <h3>Reviews</h3>
+    <ul>
+      <li *ngFor="let review of reviews">
+        <div *ngIf="editingReviewId !== review.id; else editBlock">
+          <strong>{{ review.username }}</strong>: {{ review.text }}
+
+          <span *ngIf="review.user === currentUserId" class="actions-row inline-actions">
+            <button class="secondary-btn" (click)="startEditReview(review)">Edit</button>
+            <button class="danger-btn" (click)="deleteReview(review.id)">Delete</button>
+          </span>
+        </div>
+
+        <ng-template #editBlock>
+          <textarea [(ngModel)]="editedReviewText"></textarea>
+          <div class="actions-row">
+            <button class="primary-btn" (click)="updateReview(review)">Save</button>
+            <button class="secondary-btn" (click)="cancelEditReview()">Cancel</button>
+          </div>
+        </ng-template>
+      </li>
+    </ul>
+
+    <a routerLink="/" class="back-link">← Back to list</a>
+  </div>
+</ng-template>
+
+<ng-template #loading>
+  <p>Loading movie...</p>
+</ng-template>
